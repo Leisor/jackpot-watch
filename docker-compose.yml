@@ -3,9 +3,8 @@ services:
     build: .
     container_name: veikkaus-jackpot-watch
     restart: unless-stopped
-    environment:
-      TELEGRAM_BOT_TOKEN: "${TELEGRAM_BOT_TOKEN}"   # <- set me
-      TELEGRAM_CHAT_ID:  "8444963955"      # <- set me (chat or user id)
+    env_file:
+      - .env
       LIMIT_LOTTO:       "5500000"
       LIMIT_VIKINGLOTTO: "18000000"
       LIMIT_EUROJACKPOT: "80000000"
