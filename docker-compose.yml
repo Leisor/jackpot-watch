@@ -1,0 +1,15 @@
+services:
+  veikkaus-jackpot-watch:
+    build: .
+    container_name: veikkaus-jackpot-watch
+    restart: unless-stopped
+    environment:
+      TELEGRAM_BOT_TOKEN: "${TELEGRAM_BOT_TOKEN}"   # <- set me
+      TELEGRAM_CHAT_ID:  "8444963955"      # <- set me (chat or user id)
+      LIMIT_LOTTO:       "5500000"
+      LIMIT_VIKINGLOTTO: "18000000"
+      LIMIT_EUROJACKPOT: "80000000"
+      TIMEZONE:          "Europe/Helsinki"
+      CRON_SUN_HOUR:     "9"
+      CRON_WED_HOUR:     "18"
+      RUN_ONCE:          "0"
